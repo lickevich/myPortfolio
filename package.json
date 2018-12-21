@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/loftschool/advanced-boilerplate.git"
+    "url": "https://github.com/rlickevich/myPortfolio.git"
   },
   "description": "",
   "main": "gulpfile.js",
