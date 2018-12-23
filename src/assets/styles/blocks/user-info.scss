@@ -1,0 +1,10 @@
+.user-info {
+    display: flex;
+    flex-direction: column;
+    &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

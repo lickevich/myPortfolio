@@ -4,3 +4,7 @@ mixin icon(iconName, iconClass)
 
 mixin image(imagePath, imageAlt, imageClass)
   img(src=`/assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+
+mixin svg(svgName, svgAlt, svgClass)
+  svg(class=`${svgClass}`, alt=`${svgAlt}`)
+    use(xlink:href=`/assets/images/icons/sprite.svg#${svgName}`)

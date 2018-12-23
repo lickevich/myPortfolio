@@ -7,4 +7,60 @@ block scripts
   script(src='about.bundle.js')
 
 block content
-  h1 Страничка "Обо Мне"  
+
+  section.hero
+    
+    .hero__socials
+      ul.socials
+        each social in ['vk', 'github', 'in']
+          li.socials__item
+            a(href="#").socials__link
+              +icon(social, 'socials__icon')
+    
+    .hero__menu
+      .nav-trigger
+        a(href="#").nav-trigger__link
+          span.nav-trigger__badge
+
+    .hero__content
+      +svg('portfolio_header', 'page title', 'title-svg')
+      .hero__user-desc
+        .user
+          .user__pic-container
+            .user__pic
+              +image('content/user/man.png', 'User avatar', 'user__pic-img')
+          .user__info
+            h4.user__name Лицкевич Роман
+            p.user__text Личный сайт веб разработчика
+            
+    .hero__arrow-down
+      .arrow-down
+        button.arrow-down__button
+          +svg('arrow_down', 'arrow down', 'arrow-down__button-svg')
+  
+  section.about
+    .about__col.about__col--background-white.about__col--display-flex
+      +svg('about_header', 'about', 'about__col-svg')
+      .about__left-title.about__left-title--width
+        h1.title Обо мне
+      .about__user-info.about__user-info--width
+        .user-info
+          .user-info__avatar
+            +image('content/user/man.png', 'User avatar', 'user-info__avatar-img')
+          .user-info__title
+            h2.subtitle Кто я
+            .user-info__text.text-block
+              p Я веб разработчик из Калининграда. Мне 29 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+              p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+
+
+    .about__col.about__col--background-beige
+      h2.subtitle
+        | Чем я могу быть 
+        | вам полезен
+      .about__desc-text.text-block
+        p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+    .about__content
+      ul.skills
+        each item in ['Frontend', 'Backend', 'WorkFlow']
+          li.skills__item

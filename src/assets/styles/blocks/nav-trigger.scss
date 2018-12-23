@@ -1,0 +1,36 @@
+.nav-trigger {
+    position: relative;
+
+    &__link {
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+
+    &__badge {
+        display: block;
+        height: 4px;
+        width: 30px;
+        background: #fff;
+        border-radius: 5px;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            height: 4px;
+            width: 30px;
+            background: #fff;
+            border-radius: 5px;
+        }
+
+        &::before {
+            top: 10px;
+        }
+
+        &::after {
+            top: 20px;
+        }
+    }
+}
