@@ -4,12 +4,26 @@
 
     &__col {
         position: relative;
+        width: 50%;
+    
+        &--background-white {
+            background: $white;
+        }
+        &--background-beige {
+            background: $beige;
+        }
+        &--display-flex {
+            display: flex;
+        }
         &-svg {
-            fill: hsla(180,1%,43%,.07);
             position: absolute;
-            top: 0;
-            left: 0;
-            height: 100px;
+            top: -15px;
+            left: 40px;
+        }
+
+        &__left-svg {
+            fill: hsla(180,1%,43%,.07);
+            max-height: 100%;
         }
     }
     &__left-title {
@@ -24,20 +38,6 @@
         &--width {
             width: 50%;
         }
-    }
-}
-
-.about__col {
-    width: 50%;
-    
-    &--background-white {
-        background: $white;
-    }
-    &--background-beige {
-        background: $beige;
-    }
-    &--display-flex {
-        display: flex;
     }
 }
 
