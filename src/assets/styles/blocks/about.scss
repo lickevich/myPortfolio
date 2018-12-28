@@ -1,5 +1,4 @@
 .about {
-    // height: 100vh;
     display: flex;
     position: relative;
 
@@ -43,22 +42,6 @@
     &__user-info {
         &--width {
             width: 50%;
-        }
-    }
-}
-
-.user-info {
-    &__avatar {
-        max-width: 440px;
-        &-img {
-            width: 100%;
-        }
-    }
-    &__text p {
-        margin-bottom: 10px;
-
-        &:last-child {
-            margin-bottom: 0;
         }
     }
 }

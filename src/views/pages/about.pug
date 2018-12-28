@@ -8,17 +8,13 @@ block scripts
 
 block content
 
+
   header.header
 
     section.hero
       
       .hero__socials
-        ul.socials
-          each social in ['vk', 'github', 'in']
-            li.socials__item
-              a(href="#").socials__link
-                +icon(social, 'socials__icon')
-      
+        include ../common/socials.pug
       .hero__menu
         .nav-trigger
           a(href="#").nav-trigger__link
@@ -26,7 +22,7 @@ block content
 
       .hero__content
         .hero__content-bg-picture
-          +svg('portfolio_header', 'page title', 'title-svg')
+          +icon('portfolio_header', 'title-svg')
         .hero__user-desc
           .user
             .user__pic-container
@@ -39,8 +35,9 @@ block content
       .hero__arrow-down
         .arrow-down
           button.arrow-down__button
-            +svg('arrow_down', 'arrow down', 'arrow-down__button-svg')
+            +icon('arrow_down', 'arrow-down__button-svg')
   
+
   section.about
     .triangles
       svg(viewBox="0 0 1000 110").triangles__svg
@@ -51,7 +48,7 @@ block content
         .about__left-title.about__left-title--width
           h1.title Обо мне
           .about__left-title-bg-picture
-            +svg('about_header', 'about', 'about__left-title-bg-svg')
+            +icon('about_header', 'about__left-title-bg-svg')
         .about__user-info.about__user-info--width
           .user-info
             .user-info__avatar
@@ -62,15 +59,15 @@ block content
                 p Я веб разработчик из Калининграда. Мне 29 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                 p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
 
-
     .about__col.about__col--background-beige
       .about__col-content.about__col-content--right
-        h2.subtitle.subtitle--text-center-margin 
+        h2.subtitle.subtitle--text-center.subtitle--margin-bottom
           | Чем я могу быть
           | вам полезен
         .about__desc-text.text-block
           p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
         .about__content
+
           .skills
             - 
               var skills = [
@@ -81,7 +78,7 @@ block content
             ul.skills__list
               each skillsrow in skills
                 li.skills__item.skills-row
-                  h3.skills-row__title #{skillsrow[0]}
+                  .skills-row__title #{skillsrow[0]}
                   ul.skills-row__list
                     each skill in skillsrow[1]
                       li.skills-row__item
@@ -89,4 +86,41 @@ block content
                           svg.skill__figure(width="120" height="120")
                             circle(cx="60" cy="60" r="50").skill__circle.skill__circle--under
                             circle(cx="60" cy="60" r="50").skill__circle.skill__circle--above
-                          h4.skill__title #{skill[0]}
+                          .skill__title #{skill[0]}
+
+
+  section.map
+    .map__contacts
+      .contacts
+        .contacts__content
+          .contacts__title
+            h2.subtitle.subtitle--text-center.subtitle--margin-bottom Контакты
+          - 
+            var contacts = [
+              {
+                img: 'skype',
+                text: 'r.lickevich',
+                link: 'tel:r.lickvich'
+              },
+              {
+                img: 'envelope',
+                text: 'r.lickevich@gmail.com',
+                link: 'mailto:r.lickevich@gmail.com'
+              },
+              {
+                img: 'phone',
+                text: '+7 987 654 32 10',
+                link: 'tel:+79876543210'
+              },
+              {
+                img: 'map_marker',
+                text: 'Россия, г.Калининград',
+                link: '#'
+              }
+            ]
+          ul.contacts__list
+            each item in contacts
+              li.contacts__item
+                a(href=`${item.link}` target="_blank").contacts__link
+                  +icon(item.img, 'contacts__item-svg')
+                  p.contacts__text #{item.text}
