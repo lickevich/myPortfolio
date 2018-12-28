@@ -11,7 +11,7 @@
         display: block;
         height: 4px;
         width: 30px;
-        background: #fff;
+        background: $white;
         border-radius: 5px;
 
         &::before,
@@ -21,7 +21,7 @@
             display: block;
             height: 4px;
             width: 30px;
-            background: #fff;
+            background: $white;
             border-radius: 5px;
         }
 

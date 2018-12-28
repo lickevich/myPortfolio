@@ -1,40 +1,46 @@
 .about {
-    height: 100vh;
+    // height: 100vh;
     display: flex;
+    position: relative;
 
     &__col {
-        position: relative;
         width: 50%;
-    
+
+        &-content {
+            margin: 20px 20px 0 20px;
+            &--display-flex {
+                display: flex;
+            }
+            &--right {
+                margin-left: 40px;
+            }
+        }
         &--background-white {
             background: $white;
         }
         &--background-beige {
             background: $beige;
         }
-        &--display-flex {
-            display: flex;
-        }
-        &-svg {
-            position: absolute;
-            top: -15px;
-            left: 40px;
-        }
-
-        &__left-svg {
-            fill: hsla(180,1%,43%,.07);
-            max-height: 100%;
-        }
     }
     &__left-title {
+        position: relative;
         text-align: center;
-        margin-top: 10px;
         &--width {
             width: 50%;
         }
+        &-bg-picture {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &-bg-svg {
+            fill: $light-grey;
+            height: 100%;
+            width: 357px;
+        }
     }
     &__user-info {
-        margin: 30px 20px 0 20px;
         &--width {
             width: 50%;
         }
@@ -45,7 +51,7 @@
     &__avatar {
         max-width: 440px;
         &-img {
-            max-width: 100%;
+            width: 100%;
         }
     }
     &__text p {
