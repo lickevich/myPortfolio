@@ -29,9 +29,28 @@ footer.footer
                 a(href=`${item.link}`).footer__nav__link #{item.text}          
     .footer__col
       .footer__socials
-        include /socials.pug
+        - 
+          var socials = [
+            {
+                img: 'vk',
+                link: 'https://vk.com/eeehooo'
+            },
+            {
+                img: 'github',
+                link: 'https://github.com/rlickevich'
+            },
+            {
+                img: 'in',
+                link: '#'
+            }
+          ]
+        ul.socials
+          each item in socials
+            li.socials__item
+              a(href=`${item.link}`).socials__link.socials__link--footer
+                +icon(item.img, 'socials__icon socials__icon--footer')
 
-  hr(noshade width="100%" color="#a2a2a2" size="1")
+  hr(noshade width="100%" color="#a2a4a3" size="1")
   .footer__row
     .footer__col
       .footer__text 

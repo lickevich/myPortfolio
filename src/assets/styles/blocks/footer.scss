@@ -5,7 +5,6 @@
     display: flex;
     background: rgba($grey, 0.85);
     flex-direction: column;
-
     &__row {
         display: flex;
         width: 100%;
@@ -29,6 +28,13 @@
         &__link {
             color: $white;
             font-weight: 500;
+            transition: 0.3s;
+            &:hover {
+                color: $cyan;
+                transition: 0.3s;
+
+            }
         }
     }
 }
+
