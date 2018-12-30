@@ -47,7 +47,7 @@ footer.footer
         ul.socials
           each item in socials
             li.socials__item
-              a(href=`${item.link}`).socials__link.socials__link--footer
+              a(href=`${item.link}` target="_blank").socials__link.socials__link--footer
                 +icon(item.img, 'socials__icon socials__icon--footer')
 
   hr(noshade width="100%" color="#a2a4a3" size="1")

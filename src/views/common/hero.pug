@@ -1,0 +1,15 @@
+block variables
+
+section.hero
+      
+    .hero__socials
+      include ./socials.pug
+    .hero__menu
+      include ./nav-trigger.pug
+    .hero__content
+      .hero__content-bg-picture
+        +icon(titleSVG, 'title-svg')
+      .hero__user
+        include ./user.pug        
+    .hero__arrow-down
+      include ./arrow-down.pug

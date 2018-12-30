@@ -1,0 +1,12 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'Блог'
+  - var titleSVG = 'blog_header'
+
+block scripts
+  script(src='blog.bundle.js')
+
+block content
+  include ../common/blog-section.pug
+  
