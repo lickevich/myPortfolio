@@ -12,34 +12,6 @@ const $webpack = require("webpack-stream");
 const webpack = require("webpack");
 const del = require("del");
 
-// // PXTOREM START
-
-// const pxtorem = require('gulp-pxtorem');
- 
-// gulp.task('scss', function() {
-//     gulp.src(`${config.SRC_DIR}/styles/blocks/*.scss`)
-//         .pipe(pxtorem())
-//         .pipe(gulp.dest(`${config.DIST_DIR}/assets/`));
-// });
-
-// const pxtorem = require('gulp-pxtorem');
- 
-// const pxtoremOptions = {
-//     replace: false
-// };
- 
-// const postcssOptions = {
-//     map: true  
-// };
- 
-// gulp.task('scss', function() {
-//     gulp.src(`${config.SRC_DIR}/styles/blocks/*.scss`)
-//         .pipe(pxtorem(pxtoremOptions, postcssOptions))
-//         .pipe(gulp.dest(`${config.DIST_DIR}/assets/`));
-// });
-
-// //PXTOREM END
-
 // стили
 gulp.task("styles", () => {
   return gulp

@@ -1,3 +1,41 @@
 .blog {
     position: relative;
+    height: 100%;
+    display: flex;
+
+    &__aside {
+        display: flex;
+        flex: 1;
+    }
+    &__content {
+        display: flex;
+        flex: 3;
+    }
+    &__article {
+        margin: 50px 30px 0 115px;
+        &__list {
+            display: flex;
+            flex-direction: column;
+        }
+        &__item {
+            border-bottom: 3px solid $white;
+            margin-bottom: 50px;
+            &:last-child {
+                border-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
+        &__title {
+            margin-bottom: 15px;
+            font-family: 'bernier';
+            font-size: 35px;
+        }
+        &__date {
+            margin-bottom: 15px;
+            color: $cyan;
+        }
+        &__text {
+            padding-bottom: 60px;
+        }
+    }
 }

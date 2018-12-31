@@ -1,0 +1,29 @@
+.blog__nav
+  - 
+    var nav = [
+        {
+            text: 'Самое важное в SASS',
+            link: '#'
+        },
+        {
+            text: 'Приёмы в вёрстке, без которых не обходится ни один сайт',
+            link: '#'
+        },
+        {
+            text: 'Самый необходимый набор Gulp плагинов',
+            link: '#'
+        },
+        {
+            text: 'Почему я выбрал Jade',
+            link: '#'
+        }
+    ]
+  ul.blog__nav__list
+    each item in nav
+      li.blog__nav__item
+        a(href=`${item.link}`).blog__nav__link
+          p.blog__nav__text #{item.text}
+      
+  
+  
+  
