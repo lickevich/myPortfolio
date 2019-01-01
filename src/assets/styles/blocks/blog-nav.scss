@@ -1,4 +1,6 @@
 .blog__nav {
+    position: sticky;
+    top: 0;
     &__list {
         display: flex;
         flex-direction: column;
@@ -10,11 +12,26 @@
             margin-bottom: 0;
         }
         &:hover {
-            .blog__nav__text {
+            .blog__nav__link {
                 color: $cyan;
                 font-weight: 500;
                 transition: 0.3s;
             }
+        }  
+    }
+    &__link {
+        color: $text-color;
+        position: relative;
+        min-height: 40px;
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 50%;
+            top: 50%;
+            right: -20px;
+            width: 4px;
+            background-color: $cyan;
+            display: block;
         }
     }
 }
