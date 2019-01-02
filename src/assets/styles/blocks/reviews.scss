@@ -1,0 +1,17 @@
+.reviews {
+    position: relative;
+    background: url('/assets/images/bg/reviews.png') center center / cover no-repeat;
+    &__title {
+        &__bg-picture {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            &__svg {
+                fill: $light-grey;
+                height: 130px;
+                width: 400px;
+            }
+        }
+    }
+}

@@ -1,20 +1,21 @@
-- 
-  var socials = [
-    {
-        img: 'vk',
-        link: 'https://vk.com/eeehooo'
-    },
-    {
-        img: 'github',
-        link: 'https://github.com/rlickevich'
-    },
-    {
-        img: 'in',
-        link: '#'
-    }
-  ]
-ul.socials
-  each item in socials
-    li.socials__item
-      a(href=`${item.link}` target="_blank").socials__link
-        +icon(item.img, 'socials__icon')
+.socials 
+  - 
+    var socials = [
+        {
+            img: 'vk',
+            link: 'https://vk.com/eeehooo'
+        },
+        {
+            img: 'github',
+            link: 'https://github.com/rlickevich'
+        },
+        {
+            img: 'in',
+            link: '#'
+        }
+    ]
+  ul.socials__list
+    each item in socials
+      li.socials__item
+        a(href=`${item.link}` target="_blank").socials__link
+          +icon(item.img, 'socials__icon')

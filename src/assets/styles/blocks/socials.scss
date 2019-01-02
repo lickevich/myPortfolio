@@ -1,9 +1,9 @@
 .socials {
-    display: flex;
-
+    &__list {
+        display: flex;
+    }
     &__item {
         margin-right: 30px;
-
         &:last-child {
             margin-right: 0;
         }
@@ -21,8 +21,8 @@
             fill: rgba($white, 1);
         }
     }
+    
 }
-
 .socials__link--footer {
     border: 1px solid $medium-grey;
     border-radius: 50%;

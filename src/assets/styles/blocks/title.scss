@@ -4,6 +4,10 @@ h1.title {
     text-transform: uppercase;
     position: relative;
     z-index: 99;
+    &--padding-top-center {
+        padding-top: 30px;
+        text-align: center;
+    }
 }
 
 h2.subtitle {

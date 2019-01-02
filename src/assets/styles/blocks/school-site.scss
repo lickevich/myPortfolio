@@ -1,0 +1,50 @@
+.school-site {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    &__title {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    &__tools {
+        padding: 10px 0;
+        border-top: 1px solid $cyan;
+        border-bottom: 1px solid $cyan;
+        text-align: center;
+        width: 100%;
+        color: $cyan;
+        font-weight: 500;
+        margin-bottom: 30px;
+    }
+    &__button {
+        padding: 10px 10px 10px 30px;
+        background-color: $cyan;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+        display: block;
+        &__picture {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        &__svg {
+            fill: white;
+            width: 20px;
+            height: 20px;
+        }
+        &__text {
+            color: white;
+            font-weight: 500;
+            margin-left: 5px;
+        }
+    }
+}
