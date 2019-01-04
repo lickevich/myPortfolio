@@ -1,0 +1,17 @@
+.arrow-up {
+    &__button {
+        background-color: transparent;
+        opacity: 0.7;
+        transition: 0.3s;
+        &:hover {
+            opacity: 1;
+            transition: 0.3s;
+        }
+    }
+    &__button-svg {
+        width: 26px;
+        height: 16px;
+        fill: $white;
+        transform: rotate(-180deg);
+    }
+}

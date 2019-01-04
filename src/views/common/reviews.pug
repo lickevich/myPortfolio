@@ -3,3 +3,42 @@ section.reviews
     h1.title.title--padding-top-center Что обо мне говорят
     .reviews__title__bg-picture
       +icon('about_header', 'reviews__title__bg-picture__svg')
+  .reviews__content
+    .reviews__row
+      .reviews__col
+        .reviews__picture
+          +icon('quote-left', 'reviews__quote-left__svg')
+        p.reviews__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 3 месяца только самых тяжелых испытаний и бессонных ночей!
+        .reviews__pirson
+          .reviews__pirson__avatar.reviews__pirson__avatar--kov
+          .reviews__pirson__desc
+            h4.reviews__pirson__title Ковальчук Дмитрий
+            p.reviews__pirson__text основатель Loftschool
+      .reviews__col
+        .reviews__picture
+          +icon('quote-left', 'reviews__quote-left__svg')
+        p.reviews__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+        .reviews__pirson
+          .reviews__pirson__avatar.reviews__pirson__avatar--sab
+          .reviews__pirson__desc
+            h4.reviews__pirson__title Сабанцев Владимир
+            p.reviews__pirson__text преподователь
+    .reviews__feedback
+      .reviews__feedback__container
+        h2.subtitle.subtitle--form Связаться со мной
+        form.reviews__feedback__form
+          .reviews__feedback__form__col
+            label.reviews__feedback__form__block
+              input(type="text", placeholder="Имя", name="name").reviews__feedback__form__input
+            label.reviews__feedback__form__block
+              input(type="email", placeholder="Email", name="email").reviews__feedback__form__input
+            label.reviews__feedback__form__block
+              textarea(type="text", placeholder="Ваше сообщение", name="comment", rows="6").reviews__feedback__form__textarea
+      .reviews__feedback__buttons
+        a.reviews__feedback__button.reviews__feedback__button--send Отправить
+        a.reviews__feedback__button.reviews__feedback__button--clear Очистить
+    .reviews__arrow-up
+      include ./arrow-up.pug
+
+    
+    

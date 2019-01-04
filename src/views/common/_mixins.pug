@@ -17,14 +17,6 @@ mixin user(userTitleClass, userTextClass, userTitle, userText)
       div(class="user__pic")
         +image(userImage, 'User avatar', 'user__pic-img')
     div(class="user__info")
-      h4(class=`${userTitleClass}`) #{userTitle}
+      h1(class=`${userTitleClass}`) #{userTitle}
       p(class=`${userTextClass}`) #{userText}
-
-//- mixin socials(socialsClassList, socialsClassItem, socialsClassLink, socialsClassIcon, socialsIconHref)
-//-   div(class="socials")
-//-     ul(class=`${socialsClassList}`)
-//-       - for (var i=0; i<socialsIcon.length; i++)
-//-         li(class=`${socialsClassItem}`)
-//-           a(href=`${socialsIconHref[i]}` target="_blank" class=`${socialsClassLink}`)
-//-           +icon(`${socialsIcon[i]}`, socialsClassIcon)
   

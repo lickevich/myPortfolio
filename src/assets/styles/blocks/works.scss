@@ -15,8 +15,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             &__svg {
-                fill: $light-grey;
-                height: 130px;
+                fill: rgba($light-grey, 0.5);
+                height: 100%;
                 width: 400px;
             }
         }

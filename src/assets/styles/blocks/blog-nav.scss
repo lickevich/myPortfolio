@@ -11,27 +11,36 @@
         &:last-child {
             margin-bottom: 0;
         }
-        &:hover {
-            .blog__nav__link {
-                color: $cyan;
-                font-weight: 500;
-                transition: 0.3s;
-            }
+        &:hover .blog__nav__link {
+            color: $cyan;
+            font-weight: 500;
         }  
     }
     &__link {
         color: $text-color;
         position: relative;
         min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
         &:after {
             content: "";
             position: absolute;
-            bottom: 50%;
-            top: 50%;
             right: -20px;
             width: 4px;
             background-color: $cyan;
             display: block;
+            transition: 0.3s;
+        }
+        &.is-active:after {
+            bottom: 0;
+            top: 0;
+            transition: 0.3s;
+        }
+        &:hover:after {
+            bottom: 0;
+            top: 0;
+            transition: 0.3s;
         }
     }
 }
