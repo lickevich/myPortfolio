@@ -17,9 +17,8 @@
             display: block;
             transition: 0.3s;
             &:hover {
-                background-color: rgba(white, 0.1);
-                color: rgba(white, 1);
-                border-color: rgba(white, 1);
+                background-color: rgba(white, 0.85);
+                color: rgba($cyan, 1);
                 transition: 0.3s;
             }
         }

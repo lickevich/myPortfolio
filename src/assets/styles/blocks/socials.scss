@@ -1,4 +1,7 @@
 .socials {
+    &--welcome {
+        margin-top: 35px;
+    }
     &__list {
         display: flex;
     }
@@ -33,12 +36,23 @@
         width: 25px;
         height: 20px;
         transition: 0.3s;
+        &--header {
+            &:hover {
+                transition: 0.3s;
+                fill: rgba($white, 1);
+            }
+        }
+        &--welcome {
+            fill: rgba($cyan, 0.5);
+            transition: 0.3s;
+            &:hover {
+                fill: rgba($dark-cyan, 1);
+                transition: 0.3s;
+            }
+        }
         &--footer {
             fill: $medium-grey;
-        }
-        &:hover {
             transition: 0.3s;
-            fill: rgba($white, 1);
         }
     }  
 }

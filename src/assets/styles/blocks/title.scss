@@ -48,6 +48,9 @@ h2.subtitle {
         text-align: center;
         white-space: nowrap;
     }
+    &--auth {
+        margin-bottom: 20px;
+    }
     &:after,
     &:before {
         background-color: rgba($title-color, 0.3);
