@@ -12,7 +12,7 @@ h1.title {
     }
     &:after,
     &:before {
-        background-color: $light-grey;
+        background-color: rgba($title-color, 0.3);
         content: "";
         height: 5px;
         margin: 0 15px;
@@ -21,7 +21,7 @@ h1.title {
     &--opacity {
         &:after,
         &:before {
-            background-color: rgba(white, 0.4);
+            background-color: rgba(white, 0.3);
         }
     }
     &--nowrap {
@@ -50,7 +50,7 @@ h2.subtitle {
     }
     &:after,
     &:before {
-        background-color: $light-grey;
+        background-color: rgba($title-color, 0.3);
         content: "";
         height: 5px;
         margin: 0 15px;

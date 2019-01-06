@@ -31,6 +31,11 @@
         cursor: pointer;
         position: relative;
         display: block;
+        transition: 0.3s;
+        &:hover {
+            background-color: #009884;
+            transition: 0.3s;
+        }
         &__picture {
             position: absolute;
             top: 10px;

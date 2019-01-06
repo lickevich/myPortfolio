@@ -4,19 +4,4 @@ mixin icon(iconName, iconClass)
 
 mixin image(imagePath, imageAlt, imageClass)
   img(src=`/assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
-
-mixin triangles(classNameLeft, classNameRight)
-  div(class="triangles")
-    svg(viewBox="0 0 1000 110" preserveAspectRatio="none" class="triangles__svg")
-        polygon(points="0,0 500,110 0,110" class=`${classNameLeft}`)
-        polygon(points="1000,0 500,110 1000,110" class=`${classNameRight}`)
-
-mixin user(userTitleClass, userTextClass, userTitle, userText)
-  div(class="user")
-    div(class="user__pic-container")
-      div(class="user__pic")
-        +image(userImage, 'User avatar', 'user__pic-img')
-    div(class="user__info")
-      h1(class=`${userTitleClass}`) #{userTitle}
-      p(class=`${userTextClass}`) #{userText}
   

@@ -1,6 +1,10 @@
 extends ../auth.layout.pug
+block variables
+  - var userTitleClass = 'user__title user__title--welcome'
+  - var userTextClass = 'user__text user__text--welcome'
+  - var userTitle = 'Лицкевич Роман'
+  - var userText = 'Личный сайт веб разработчика'
+  - var userImage = 'content/user/man.png'
 
 block content
-  .hello-world
-    +icon('portfolio_header', 'hello-world__block')
-    .inlined-svg
+  include ../common/welcome.pug

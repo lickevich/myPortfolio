@@ -26,7 +26,7 @@
         display: flex;
         width: 800px;
         position: absolute;
-        top: 80px;
+        top: 160px;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -38,6 +38,14 @@
         &:last-child {
             margin-right: 0;
         }
+    }
+    &__picture {
+        margin-bottom: 10px;
+    }
+    &__quote-left__svg {
+        fill: rgba($light-grey, 0.85);
+        width: 33px;
+        height: 29px;
     }
     &__pirson {
         display: flex;
@@ -120,7 +128,7 @@
             flex: 1;
             text-align: center;
             color: white;
-            background-color: $cyan;
+            background-color: rgba($cyan, 0.85);
             padding: 12px;
             cursor: pointer;
             display: block;
@@ -128,16 +136,16 @@
             font-weight: 500;
             transition: 0.3s;
             &:hover {
-                background-color: #009884;
+                background-color: rgba($dark-cyan, 0.85);
                 transition: 0.3s;
             }
             &--send {
                 border-bottom-left-radius: 5px;
-                border-right: 1px solid $light-grey;
+                border-right: 1px solid rgba(white, 0.5);
             }
             &--clear {
                 border-bottom-right-radius: 5px;
-                border-left: 1px solid $light-grey;
+                border-left: 1px solid rgba(white, 0.5);
             }
             &:last-child {
                 border-right: 0;

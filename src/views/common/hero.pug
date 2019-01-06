@@ -3,7 +3,23 @@ block variables
 section.hero
       
     .hero__socials
-      include ./socials.pug
+      - 
+        var socials = [
+            {
+                img: 'vk',
+                link: 'https://vk.com/eeehooo'
+            },
+            {
+                img: 'github',
+                link: 'https://github.com/rlickevich'
+            },
+            {
+                img: 'in',
+                link: '#'
+            }
+        ]
+      +socials('header')
+
     .hero__menu
       include ./nav-trigger.pug
     .hero__content

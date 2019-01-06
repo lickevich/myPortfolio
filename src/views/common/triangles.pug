@@ -1,0 +1,5 @@
+mixin triangles(classNameLeft, classNameRight)
+  div(class="triangles")
+    svg(viewBox="0 0 1000 110" preserveAspectRatio="none" class="triangles__svg")
+        polygon(points="0,0 500,110 0,110" class=`${classNameLeft}`)
+        polygon(points="1000,0 500,110 1000,110" class=`${classNameRight}`)

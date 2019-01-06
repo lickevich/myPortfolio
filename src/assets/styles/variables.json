@@ -5,6 +5,8 @@
   "text-color": "#455a64",
   "grey": "#373e42",
   "light-grey": "#dfdcd5",
-  "cyan" : "#00bfa5",
-  "medium-grey" : "#a2a4a3"
+  "cyan": "#00bfa5",
+  "medium-grey": "#a2a4a3",
+  "title-color": "#48676e",
+  "dark-cyan": "#009884"
 }
