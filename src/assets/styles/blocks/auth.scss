@@ -63,8 +63,37 @@
         &__checkbox {
             display: flex;
             align-items: center;
+            &__text {
+                margin-left: 8px; 
+            }
             &__input {
-                
+                position: absolute;
+                clip: rect(0 0 0 0);
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                &:checked+.auth__form__checkbox__fake::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 8px;
+                    height: 8px;
+                    background: url('./assets/images/svg-icon/check.svg') 50% no-repeat $cyan;
+                    background-size: contain;
+                }
+                &:checked+.auth__form__checkbox__fake {
+                    background-color: $cyan;
+                }
+            }
+            &__fake {
+                position: relative;
+                width: 16px;
+                height: 16px;
+                border-radius: 3px;
+                background-color: white;
+                border: 1px solid $light-grey;
             }
         }
         &__radio {
@@ -75,7 +104,7 @@
                 margin-right: 0;
             }
             &__text {
-                margin-left: 5px;
+                margin-left: 8px;
             }
             &__input {
                 position: absolute;
