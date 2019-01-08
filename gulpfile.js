@@ -12,6 +12,14 @@ const $webpack = require("webpack-stream");
 const webpack = require("webpack");
 const del = require("del");
 
+// gulp deploy gh-pages
+
+const {src, task}= require('gulp');
+const ghPages = require('gulp-gh-pages');
+
+task('deploy', () => src('./dist/**/*').pipe(ghPages()));
+
+
 // стили
 gulp.task("styles", () => {
   return gulp
