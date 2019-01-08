@@ -1,8 +1,0 @@
-mixin socials(mod)
-  div(class="socials socials--" + mod)
-    ul(class="socials__list socials__list--" + mod)
-      each item in socials
-        li(class="socials__item socials__item--" + mod)
-          a(href=`${item.link}` target="_blank" class="socials__link socials__link--" + mod)
-            +icon(item.img, 'socials__icon socials__icon--' + mod)
-      

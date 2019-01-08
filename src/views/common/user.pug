@@ -1,8 +1,0 @@
-mixin user(userTitleClass, userTextClass, userTitle, userText)
-  div(class="user")
-    div(class="user__pic-container")
-      div(class="user__pic")
-        +image(userImage, 'User avatar', 'user__pic-img')
-    div(class="user__info")
-      h1(class=`${userTitleClass}`) #{userTitle}
-      p(class=`${userTextClass}`) #{userText}
