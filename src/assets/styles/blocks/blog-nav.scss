@@ -1,6 +1,9 @@
 .blog__nav {
     position: sticky;
     top: 0;
+    left: 0;
+    width: 300px;
+    margin-top: 20px;
     &__list {
         display: flex;
         flex-direction: column;
@@ -11,10 +14,6 @@
         &:last-child {
             margin-bottom: 0;
         }
-        &:hover .blog__nav__link {
-            color: $cyan;
-            font-weight: 500;
-        }  
     }
     &__link {
         color: $text-color;
@@ -23,23 +22,27 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        transition: 0.3s;
         &:after {
             content: "";
             position: absolute;
             right: -20px;
+            bottom: 0;
+            top: 0;
             width: 4px;
-            background-color: $cyan;
+            background-color: transparent;
             display: block;
             transition: 0.3s;
         }
-        &.is-active:after {
-            bottom: 0;
-            top: 0;
+        &.is-active:after,
+        &:hover:after {
+            background-color: $cyan;
             transition: 0.3s;
         }
-        &:hover:after {
-            bottom: 0;
-            top: 0;
+        &.is-active,
+        &:hover {
+            color: $cyan;
+            font-weight: bold;
             transition: 0.3s;
         }
     }
