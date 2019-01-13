@@ -3,17 +3,16 @@
     bottom: 0;
     width: 100%;
     display: flex;
-    background: rgba($grey, 0.85);
+    background: rgba($grey, 0.8);
     flex-direction: column;
     &__row {
         display: flex;
         width: 100%;
         justify-content: space-between;
-        padding: 30px 30px 25px 30px;
+        align-items: center;
+        padding: 20px;
         border-bottom: 1px solid $medium-grey;
         &:last-child {
-            padding-bottom: 15px;
-            padding-top: 15px;
             border-bottom: none;
         }
     }
@@ -39,7 +38,6 @@
             &:hover {
                 color: $cyan;
                 transition: 0.3s;
-
             }
         }
     }

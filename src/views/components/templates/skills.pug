@@ -1,0 +1,18 @@
+script(type="text/x-template")#skills-list   
+  ul.skills-list
+    li.skills-list__item
+      skillsRow
+
+script(type="text/x-template")#skills-item
+  .skills-row
+    .skills-list__title Frontend
+    ul.skills
+      li.skills-list__item
+        skill
+
+script(type="text/x-template")#skill            
+  .skill
+    svg(viewBox="0 0 100 100" preserveAspectRation="none").skill__figure
+      circle(cx="50" cy="50" r="40").skill__circle.skill__circle--under
+      circle(cx="50" cy="50" r="40").skill__circle.skill__circle--above
+    .skill__title

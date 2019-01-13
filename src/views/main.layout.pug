@@ -12,6 +12,7 @@ html(lang="ru")
     meta(content="width=device-width, initial-scale=1" name="viewport")
     
     title Portfolio | #{title}
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
     link(rel="icon" type="image/x-icon" href="./assets/images/favicon/favicon.ico")
     link(rel='stylesheet' href='main.min.css')
   body
@@ -21,6 +22,7 @@ html(lang="ru")
         block content
 
       include ./common/footer.pug
+      include ./components/entry.pug
 
     script(src='bootloader.bundle.js')
     script(src='vendor.bundle.js')
