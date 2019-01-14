@@ -110,3 +110,40 @@
 //         box-shadow: 0px 15px 12px -10px rgba(50, 50, 50, 0.75);
 //     }
 // }
+
+.slider {
+    height: 100vh;
+    min-height: 650px;
+    background-color: #f0efe9;
+    display: grid;
+    grid-template: 
+      "info display" 70%
+      "info buttons" 30%
+      / 1fr 1fr;
+}
+.slider__info__container {
+    grid-area: info;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider__display {
+    background-color: #efebe0;
+    grid-area: display;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.slider__buttons {
+    grid-area: buttons;
+    display: flex;
+    user-select: none;
+}
+.slider__big-pic {
+    max-height: 90%;
+    max-width: 90%;
+    display: block;
+}
+.slider__button {
+    width: 50%;
+}

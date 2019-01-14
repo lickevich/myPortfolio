@@ -58,6 +58,10 @@
     }
     &--above {
         stroke: $green;
+        stroke-dasharray: 314;
+        stroke-dashoffset: 314;
+        transform: rotate(-90deg);
+        transform-origin: center;
     }
 }
 
@@ -71,9 +75,9 @@
     text-align: center;
 }
 
-.skill__circle_above {
-    stroke-dasharray: 251;
-    stroke-dashoffset: 251;
-    transform: rotate(-90deg);
-    transform-origin: center;
-}
+// .skill__circle--above {
+//     stroke-dasharray: 251;
+//     stroke-dashoffset: 251;
+//     transform: rotate(-90deg);
+//     transform-origin: center;
+// }

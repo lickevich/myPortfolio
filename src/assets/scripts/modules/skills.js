@@ -1,10 +1,30 @@
 import Vue from 'vue';
 
 const skill = {
-    template: "#skill"
+    template: "#skill",
+    props: {
+        skillPercentage: Number,
+        skillTitle: String
+    },
+    methods: {
+        drawCircleDependsOnPercentage() {
+          const circle = this.$refs['circle'];
+          const dashOffset = parseInt(
+          getComputedStyle(circle).getPropertyValue("stroke-dashoffset")
+          );
+          const percent = (dashOffset / 100) * (100 - this.skillPercentage);
+          circle.style.strokeDashoffset = percent; // откуда strokeDashoffset?
+        }
+    },
+    mounted() {
+        this.drawCircleDependsOnPercentage();
+    }
 }
 const skillsRow = {
     template: "#skills-item",
+    props: {
+        skillsGroupObj: Object
+    },
     components: {
         skill
     }
@@ -21,7 +41,7 @@ new Vue({
         }
     },
     created () {
-        this.skills = require('../../../assets/data/skills.json');
+        this.skills = require('../../../data/skills.json');
     },
     template: "#skills-list"
 });
