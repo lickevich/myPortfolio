@@ -1,38 +1,45 @@
 script(type="text/x-template")#slider-root
   .slider
     info(
-        :work="currentWork"
+      :work="currentWork"
     )
     display(
-        :work="currentWork"
+      :work="currentWork"
     )
     btns(
-        @slide="handleSlide"
+      :works="works"
+      :index="currentIndex"
+      @slide="handleSlide"
     )
 
 script(type="text/x-template")#slider-info
   .slider__info__container
     .slider__info
       .slider__info-title
-        h2.subtitle {{work.title}}
+        h2.subtitle.subtitle--text-center {{work.title}}
         .slider__info-skills {{work.skills}}
         .slider__info-button
           a(:href="work.link").iconed-button
             .iconed-button__icon
               +icon('link', 'iconed-button__icon-svg')
-            .iconed-button__text Посмотреть сайт
+            p.iconed-button__text Посмотреть сайт
 
 script(type="text/x-template")#slider-display
   .slider__display
-    img(:src="work.photo", alt="").slider__big-pic
+    .slider__display__container
+      img(:src="work.photo", alt="").slider__big-pic
 
 script(type="text/x-template")#slider-btns
   .slider__buttons
     .slider__button(@click="slide('prev')")
+      .slider__button__arrow
+        +icon('arrow_down', 'slider__button__arrow-icon slider__button__arrow-icon--prev')
       .slider__button-container
         .slider__button-img-wrap
-          img(src="", alt="").slider__button-pic
+          img(:src="prevButtonWorks[index].photo", alt="").slider__button-pic
     .slider__button.slider__button-next(@click="slide('next')")
+      .slider__button__arrow
+        +icon('arrow_down', 'slider__button__arrow-icon slider__button__arrow-icon--next')
       .slider__button-container
         .slider__button-img-wrap()
-          img(src="", alt="").slider__button-pic
+          img(:src="nextButtonWorks[index].photo", alt="").slider__button-pic
