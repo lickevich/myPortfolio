@@ -2,31 +2,7 @@ footer.footer
   .footer__row
     .footer__col
       .footer__menu
-        nav.footer__nav
-          - 
-            var menu = [
-                {
-                    text: 'Мои работы',
-                    link: '#'
-                },
-                {
-                    text: 'Обо мне',
-                    link: '#'
-                },
-                {
-                    text: 'Блог',
-                    link: '#'
-                },
-                {
-                    text: 'Авторизация',
-                    link: '#'
-                },
-            ]
-
-          ul.footer__nav__list
-            each item in menu
-              li.footer__nav__item
-                a(href=`${item.link}`).footer__nav__link #{item.text}          
+        include ./menu-nav.pug         
     .footer__col
       .footer__socials
         - 

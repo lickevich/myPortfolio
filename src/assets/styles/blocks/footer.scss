@@ -32,26 +32,6 @@
             }
         }
     }
-    &__nav {
-        &__list {
-            display: flex;
-        }
-        &__item {
-            margin-left: 40px;
-            &:first-child {
-                margin-left: 0;
-            }
-        }
-        &__link {
-            color: $white;
-            font-weight: 500;
-            transition: 0.3s;
-            &:hover {
-                color: $cyan;
-                transition: 0.3s;
-            }
-        }
-    }
 }
 
 .footer__text {
