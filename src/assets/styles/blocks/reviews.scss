@@ -30,14 +30,18 @@
     }
     &__row {
         display: flex;
-        width: 800px;
+        max-width: 800px;
         margin-bottom: 50px;
+
+        @include tablets {
+            margin: 0 30px 50px;
+        }
     }
     &__col {
         display: flex;
         flex: 1;
         flex-direction: column;
-        margin-right: 10px;
+        margin-right: 20px;
         &:last-child {
             margin-right: 0;
         }

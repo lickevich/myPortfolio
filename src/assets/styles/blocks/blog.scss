@@ -7,6 +7,10 @@
         display: flex;
         flex: 1;
         margin-left: 30px;
+
+        @include tablets {
+            display: none;
+        }
     }
     &__content {
         display: flex;
@@ -14,6 +18,10 @@
     }
     &__article {
         margin: 50px 50px 0 115px;
+
+        @include tablets {
+            margin: 50px 30px 0;
+        }
         &__list {
             display: flex;
             flex-direction: column;

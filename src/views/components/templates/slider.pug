@@ -16,13 +16,13 @@ script(type="text/x-template")#slider-info
   .slider__info__container
     .slider__info
       .slider__info-title
-        h2.subtitle.subtitle--text-center {{work.title}}
-        .slider__info-skills {{work.skills}}
-        .slider__info-button
-          a(:href="work.link").iconed-button
-            .iconed-button__icon
-              +icon('link', 'iconed-button__icon-svg')
-            p.iconed-button__text Посмотреть сайт
+        h2.subtitle.subtitle--center {{work.title}}
+      .slider__info-skills {{work.skills}}
+    .slider__info-button
+      a(:href="work.link").iconed-button
+        .iconed-button__icon
+          +icon('link', 'iconed-button__icon-svg')
+        p.iconed-button__text Посмотреть сайт
 
 script(type="text/x-template")#slider-display
   .slider__display

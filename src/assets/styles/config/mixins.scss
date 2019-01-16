@@ -1,4 +1,10 @@
 
+@mixin pc-screen-s {
+    @media (max-width: $pc-screen-s) {
+        @content;
+    }
+}
+
 @mixin tablets {
     @media (max-width: $tablets) {
         @content;
