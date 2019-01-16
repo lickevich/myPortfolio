@@ -13,7 +13,7 @@
 
         @include tablets {
             width: 100%;
-            height: 100vh;
+            // height: 100%;
         }
 
         &-content {
@@ -56,6 +56,8 @@
         margin-bottom: 30px;
         @include tablets {
             max-width: 530px;
+            margin-right: 15px;
+            margin-left: 15px;
         }
     }
 

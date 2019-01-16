@@ -8,6 +8,7 @@ h1.title {
     align-items: center;
     &--reviews {
         justify-content: center;
+        text-align: center;
     }
     &:after,
     &:before {
@@ -71,6 +72,12 @@ h2.copyright {
     font-size: 16px;
     font-weight: 300;
     color: rgba(#fff, 0.5);
+    white-space: nowrap;
+
+    @include phones {
+        white-space: initial;
+        text-align: center;
+    }
 }
 
 .skills-row__title {

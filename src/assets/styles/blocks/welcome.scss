@@ -5,10 +5,18 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+
     &__auth {
         position: absolute;
         top: 30px;
         right: 80px;
+        outline: none;
+
+        @include phones {
+            right: 50%;
+            transform: translateX(50%);
+        }
+
         &__button {
             color: rgba(white, 0.7);
             padding: 10px 20px;
@@ -28,5 +36,11 @@
         bottom: 50px;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        @include phones {
+            max-width: 310px;
+            left: initial;
+            transform: initial;
+        }
     }
 }

@@ -27,6 +27,15 @@
     }
 }
 
+.skills {
+    @include tablets {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
 .skill {
     width: 100px;
     height: 100px;

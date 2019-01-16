@@ -2,11 +2,13 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     background: url('./assets/images/bg/reviews.png') center center / cover no-repeat;
     &__title {
         position: relative;
         height: 100%;
-        margin: 50px 0;
+        margin: 50px 20px;
+        max-width: 400px;
         &__bg-picture {
             position: absolute;
             top: 50%;
@@ -36,6 +38,10 @@
         @include tablets {
             margin: 0 30px 50px;
         }
+
+        @include phones {
+            flex-direction: column;
+        }
     }
     &__col {
         display: flex;
@@ -45,9 +51,19 @@
         &:last-child {
             margin-right: 0;
         }
+        @include phones {
+            margin: 0 0 30px;
+            &:last-child {
+                margin: 0;
+            }
+        }
     }
     &__picture {
         margin-bottom: 10px;
+
+        @include phones {
+            text-align: center;
+        }
     }
     &__quote-left__svg {
         fill: rgba($light-grey, 0.85);
@@ -164,5 +180,9 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 10;
+
+        @include phones {
+            top: 95%;
+        }
     }
 }

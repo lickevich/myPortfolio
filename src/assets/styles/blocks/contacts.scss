@@ -7,12 +7,23 @@
     border-radius: 5px;
     opacity: 0.9;
 
+    @include phones {
+        width: 100%;
+        top: 0;
+        left: initial;
+        transform: initial;
+    }
+
     &__title {
         margin-bottom: 20px;
     }
     &__content {
         padding: 30px;
         width: 380px;
+
+        @include phones {
+            width: initial;
+        }
     }
     &__item {
         margin-bottom: 20px;
