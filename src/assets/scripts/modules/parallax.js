@@ -10,10 +10,7 @@ const moveLayers = e => {
         const divider = i / 100;
         const positionX = initialX * divider;
         const positionY = initialY * divider;
-        const bottomPosition = (window.innerHeight / 2) * divider;
-        const image = layer.firstElementChild;
         
-        // image.style.bottom = '-100px';
         layer.style.transform = `translate(${positionX}px, ${positionY}px)`;
     });
 }

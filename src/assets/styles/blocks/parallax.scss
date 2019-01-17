@@ -15,9 +15,38 @@
 }
 .parallax__image {
     position: absolute;
-    bottom: -50px;
+    bottom: -200px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
     height: auto;
+}
+
+
+@media (max-width: 1200px) {
+    .parallax__image {bottom: -50px; width: 110%;}
+}
+@media (max-width: 768px) {
+    .parallax__image {bottom: -50px; width: 150%;}
+}
+@media (max-width: 480px) {
+    .parallax__image {width: 200%;}
+}
+
+.parallax__layer--cloud1,
+.parallax__image--cloud2,
+.parallax__image--cloud3 {
+    width: 100%;
+}
+.parallax__image--cloud1 {
+    width: 100%;
+    bottom: 0;
+}
+.parallax__image--cloud2 {
+    width: 100%;
+    bottom: 0;
+}
+.parallax__image--cloud3 {
+    width: 100%;
+    bottom: 0;
 }
