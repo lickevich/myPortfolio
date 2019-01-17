@@ -1,20 +1,23 @@
 .parallax {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    background: url('./assets/images/parallax/10-layer5.png') center center / cover no-repeat;
 }
 .parallax__layer {
     position: absolute;
     top: 0;
-    left: 0;
+    left: -30px;
     height: 100%;
-    width: 100%;
+    width: 105%;
 }
 .parallax__image {
     position: absolute;
-    bottom: 0;
+    bottom: -50px;
     left: 50%;
     transform: translateX(-50%);
+    width: 100%;
+    height: auto;
 }
