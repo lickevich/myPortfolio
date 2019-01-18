@@ -9,9 +9,9 @@
 .parallax__layer {
     position: absolute;
     top: 0;
-    left: -30px;
+    left: -50px;
     height: 100%;
-    width: 105%;
+    width: 110%;
 }
 .parallax__image {
     position: absolute;
@@ -33,20 +33,66 @@
     .parallax__image {width: 200%;}
 }
 
-.parallax__layer--cloud1,
-.parallax__image--cloud2,
 .parallax__image--cloud3 {
-    width: 100%;
-}
-.parallax__image--cloud1 {
-    width: 100%;
-    bottom: 0;
-}
+    width: 20%;
+    bottom: 70%;
+    left: -5%;
+    animation: cloudMove3 95s linear infinite;
+}    
+
 .parallax__image--cloud2 {
-    width: 100%;
-    bottom: 0;
+    width: 25%;
+    bottom: 45%;
+    left: -15%;
+    animation: cloudMove2 75s linear infinite;
+}  
+
+.parallax__image--cloud1 {
+    width: 80%;
+    bottom: -25%;
+    left: -45%;
+    animation: cloudMove1 55s linear infinite;
+} 
+
+@media (max-width: 1200px) {
+    .parallax__image--cloud3 {bottom: 70%;}
+    .parallax__image--cloud2 {bottom: 55%;}
+    .parallax__image--cloud1 {bottom: -10%;}
 }
-.parallax__image--cloud3 {
-    width: 100%;
-    bottom: 0;
+@media (max-width: 768px) {
+    .parallax__image--cloud3 {bottom: 65%;}
+    .parallax__image--cloud2 {bottom: 50%;}
+    .parallax__image--cloud1 {bottom: -5%;}
+}
+@media (max-width: 480px) {
+    .parallax__image--cloud3 {bottom: 55%;}
+    .parallax__image--cloud2 {bottom: 40%;}
+    .parallax__image--cloud1 {bottom: 10%;}
+}
+
+@keyframes cloudMove1 {
+from {
+  left: -35%;
+}
+to {
+  left: 140%;
+}
+}
+
+@keyframes cloudMove2 {
+from {
+  left: -20%;
+}
+to {
+  left: 125%;
+}
+}
+
+@keyframes cloudMove3 {
+from {
+  left: -45%;
+}
+to {
+  left: 145%;
+}
 }
