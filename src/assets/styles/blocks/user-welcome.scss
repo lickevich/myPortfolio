@@ -5,6 +5,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    &.is-active {
+        display: none;
+    }
     &__container {
         background-color: rgba(white, 0.85);
         width: 100%;
