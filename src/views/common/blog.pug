@@ -2,8 +2,10 @@
 
   +triangles('triangles__svg--white', 'triangles__svg--white')
   
-  aside.blog__aside
+  aside.blog__aside.blog__aside--absolute
     include ../common/blog-nav.pug
+    a(href="#").blog__nav-trigger
+      
 
   main.blog__content
     include ../common/blog-article.pug

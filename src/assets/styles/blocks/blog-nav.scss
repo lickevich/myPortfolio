@@ -1,9 +1,7 @@
 .blog__nav {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 300px;
+    max-width: 300px;
     margin-top: 20px;
+    padding-left: 10px;
     &__list {
         display: flex;
         flex-direction: column;
@@ -14,6 +12,10 @@
         &:last-child {
             margin-bottom: 0;
         }
+        @include tablets {
+            margin: 0;
+            padding: 15px 30px;
+        }
     }
     &__link {
         color: $text-color;
@@ -22,7 +24,9 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        transition: 0.3s;
+        @include tablets {
+            color: rgba(white, 0.8);
+        }
         &:after {
             content: "";
             position: absolute;
@@ -34,16 +38,47 @@
             display: block;
             transition: 0.3s;
         }
-        &.is-active:after,
-        &:hover:after {
+    }
+}
+
+.blog__nav__item {
+    &.is-active .blog__nav__link {
+        color: $cyan;
+        font-weight: bold;
+        transition: 0.3s;
+        @include tablets {
+            color: white;
+        }
+        &:after {
             background-color: $cyan;
             transition: 0.3s;
+            @include tablets {
+                display: none;
+            }
         }
-        &.is-active,
-        &:hover {
-            color: $cyan;
-            font-weight: bold;
-            transition: 0.3s;
+    }
+    &:hover .blog__nav__link:after {
+        background-color: $cyan;
+        transition: 0.3s;
+        @include tablets {
+            display: none;
         }
+    }
+    &:hover .blog__nav__link {
+        color: $cyan;
+        font-weight: bold;
+        transition: 0.3s;
+        @include tablets {
+            color: white;
+        }
+    }
+}
+
+.blog__nav {
+    @include tablets {
+        background-color: $green;
+        max-width: initial;
+        width: 100%;
+        z-index: 10;
     }
 }
