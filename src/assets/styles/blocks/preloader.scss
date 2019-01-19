@@ -1,0 +1,50 @@
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    transition: opacity .5s;
+}
+.preloader__image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.preloader__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 120px;
+    width: 120px;
+}
+.preloader__item {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    border-top: 2px solid white;
+
+    &--mid {
+        height: 88%;
+        left: 6%;
+        top: 6%;
+        width: 88%;
+    }
+    &--in {
+        height: 76%;
+        left: 12%;
+        top: 12%;
+        width: 76%;
+    }
+}
+.preloader__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
