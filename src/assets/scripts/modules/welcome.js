@@ -4,6 +4,7 @@ const authLink = document.querySelector('.welcome__auth');
 const buttons = document.querySelector('.auth__form__buttons');
 const button = buttons.firstElementChild;
 
+
 authLink.addEventListener('click', toggleClass);
 
 function toggleClass(e) {

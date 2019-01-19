@@ -85,7 +85,7 @@ blogList.addEventListener('click', e => {
 
 fixed();
 
-window.addEventListener("scroll", e => {
+window.addEventListener("scroll",  function() {
     fixed();
     checkCurrentArticle();
 });
