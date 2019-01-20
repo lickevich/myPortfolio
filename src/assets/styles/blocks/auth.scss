@@ -179,7 +179,7 @@
     left: 50%;
     margin-top: 10px;
     transform: translateX(-50%);
-    display: none;
+    visibility: hidden;
     transition: 0.6s;
     &:after {
         position: absolute;

@@ -5,8 +5,21 @@ enterButton.addEventListener('click', function(e) {
     e.preventDefault();
 
     if (validateForm(authForm)) {
-        console.log('все ок')
-
+        const data = {
+            login: authForm.elements.login.value,
+            password: authForm.elements.password.value,
+            human: authForm.elements.human.checked,
+            question: authForm.elements.question.value
+        };
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.open('POST', 'https://webdev-api.loftschool.com/');
+        xhr.send(JSON.stringify(data));
+        xhr.addEventListener('load', function() {
+            if (xhr.response.status) {
+                console.log('все ок');
+            }
+        });
     }
 });
 
@@ -23,12 +36,17 @@ function validateForm(form) {
 }
 
 function validateField(field) {
+
+    field.addEventListener('focus', function() {
+        field.nextElementSibling.style.visibility = 'hidden';
+    });
+
     if (!field.checkValidity()) {
-        field.nextElementSibling.style.display = 'block';
+        field.nextElementSibling.style.visibility = 'visible';
 
         return false;
     } else {
-        field.nextElementSibling.style.display = 'none';
+        field.nextElementSibling.style.visibility = 'hidden';
 
         return true;
     }
