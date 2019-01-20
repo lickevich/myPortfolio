@@ -7,7 +7,7 @@ const navTrigger = document.querySelector('.nav-trigger');
 heroMenu.addEventListener('click', toggleClass);
 
 for (const iterator of menuNavItems) {
-    iterator.addEventListener('click', toggleClass)
+    iterator.addEventListener('click', toggleClass);
 }
 
 function toggleClass() {

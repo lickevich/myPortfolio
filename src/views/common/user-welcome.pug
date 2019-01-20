@@ -1,43 +1,46 @@
 .user-welcome
-  .user-welcome__container
-    .user-welcome__content
-      +user(userTitleClass, userTextClass, userTitle, userText)
-      .user-welcome__socials
+  .user-welcome__front
+    .user-welcome__container
+      .user-welcome__content
+        +user(userTitleClass, userTextClass, userTitle, userText)
+        .user-welcome__socials
+          - 
+            var socials = [
+                {
+                    img: 'vk',
+                    link: 'https://vk.com/eeehooo'
+                },
+                {
+                    img: 'github',
+                    link: 'https://github.com/rlickevich'
+                },
+                {
+                    img: 'in',
+                    link: '#'
+                }
+            ]
+          +socials('welcome')
+      .user-welcome__buttons
         - 
-          var socials = [
+          var buttons = [
               {
-                  img: 'vk',
-                  link: 'https://vk.com/eeehooo'
+                text: "Мои работы",
+                link: "/works.html"
               },
               {
-                  img: 'github',
-                  link: 'https://github.com/rlickevich'
+                text: "Обо мне",
+                link: "/about.html"
               },
               {
-                  img: 'in',
-                  link: '#'
+                text: "Блог",
+                link: "/blog.html"
               }
           ]
-        +socials('welcome')
-    .user-welcome__buttons
-      - 
-        var buttons = [
-            {
-              text: "Мои работы",
-              link: "/works.html"
-            },
-            {
-              text: "Обо мне",
-              link: "/about.html"
-            },
-            {
-              text: "Блог",
-              link: "/blog.html"
-            }
-        ]
-      ul.user-welcome__buttons__list
-        each item in buttons
-          li.user-welcome__buttons__item
-            a(href=`${item.link}`).user-welcome__buttons__link #{item.text}
+        ul.user-welcome__buttons__list
+          each item in buttons
+            li.user-welcome__buttons__item
+              a(href=`${item.link}`).user-welcome__buttons__link #{item.text}
+  .user-welcome__back
+    include ./auth.pug
         
 

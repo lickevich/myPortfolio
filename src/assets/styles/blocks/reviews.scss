@@ -3,11 +3,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url('./assets/images/bg/reviews.png') center center / cover no-repeat;
+    position: relative;
+    padding-bottom: 200px;
+    @include phones {
+        padding-bottom: 320px;
+    }
+    &__back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        min-width: 900px;
+    }
     &__title {
         position: relative;
         height: 100%;
-        margin: 50px 20px;
+        margin: 30px 20px 35px;
         max-width: 400px;
         &__bg-picture {
             position: absolute;
@@ -45,9 +57,8 @@
     }
     &__col {
         display: flex;
-        flex: 1;
         flex-direction: column;
-        margin-right: 20px;
+        padding: 0 15px;
         &:last-child {
             margin-right: 0;
         }
@@ -101,19 +112,25 @@
     &__feedback {
         display: flex;
         flex-direction: column;
-        &__container {
+        width: 380px;
+        height: 410px;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        border-radius: 5px; 
+        &__blur {
+            position: absolute;
             height: 100%;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-            background-color: rgba($light-grey, 0.3);
-            border-radius: 5px; 
+            background: url('./assets/images/bg/reviews.png') center no-repeat;
+            // filter: blur(20px);
+            background-size: 900px;
+            overflow: hidden;
+            border-radius: 5px;
         }
         &__form {
             width: 100%;
+            z-index: 10;
             &-container {
                 padding: 0 20px;
             }
@@ -175,14 +192,14 @@
         }
     }
     &__arrow-up {
-        position: absolute;
-        top: 90%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        width: 100%;
         z-index: 10;
+        margin-top: 50px;
 
-        @include phones {
-            top: 95%;
+        @include tablets {
+            margin-top: 80px;
         }
     }
 }

@@ -1,36 +1,36 @@
-.auth
-  .auth__container
-    h2.subtitle.subtitle--auth Авторизуйтесь
-    form.auth__form
-      .auth__form-container
-        .auth__form__col
-          .auth__form__row
-            .auth__form__block__picture
-              +icon('login', 'auth__form__block__icon')
-            label.auth__form__block
-              input(type="text" placeholder="Логин" name="login").auth__form__block__input
-          .auth__form__row
-            .auth__form__block__picture
-              +icon('password', 'auth__form__block__icon')
-            label.auth__form__block
-              input(type="password" placeholder="Пароль" name="password").auth__form__block__input
-          .auth__form__row
-            label.auth__form__checkbox
-              input(type="checkbox" name="human" checked).auth__form__checkbox__input
-              .auth__form__checkbox__fake
-              span.auth__form__checkbox__text Я человек
-          .auth__form__row
-            .auth__form__row__question Вы точно не робот?
-          .auth__form__row
-            label.auth__form__radio
-              input(type="radio" name="question" value="yes" checked).auth__form__radio__input
-              .auth__form__radio__fake
-              span.auth__form__radio__text Да
-            label.auth__form__radio
-              input(type="radio" name="question" value="no").auth__form__radio__input
-              .auth__form__radio__fake
-              span.auth__form__radio__text Не уверен
-      .auth__form__buttons
-        a(href="#").auth__form__button На главную
-        a(href="#").auth__form__button Войти
+
+.auth__container
+  h2.subtitle.subtitle--auth Авторизуйтесь
+  form.auth__form
+    .auth__form-container
+      .auth__form__col
+        .auth__form__row
+          .auth__form__block__picture
+            +icon('login', 'auth__form__block__icon')
+          label.auth__form__block
+            input(type="text" placeholder="Логин" name="login").auth__form__block__input
+        .auth__form__row
+          .auth__form__block__picture
+            +icon('password', 'auth__form__block__icon')
+          label.auth__form__block
+            input(type="password" placeholder="Пароль" name="password").auth__form__block__input
+        .auth__form__row
+          label.auth__form__checkbox
+            input(type="checkbox" name="human" checked).auth__form__checkbox__input
+            .auth__form__checkbox__fake
+            span.auth__form__checkbox__text Я человек
+        .auth__form__row
+          .auth__form__row__question Вы точно не робот?
+        .auth__form__row
+          label.auth__form__radio
+            input(type="radio" name="question" value="yes" checked).auth__form__radio__input
+            .auth__form__radio__fake
+            span.auth__form__radio__text Да
+          label.auth__form__radio
+            input(type="radio" name="question" value="no").auth__form__radio__input
+            .auth__form__radio__fake
+            span.auth__form__radio__text Не уверен
+    .auth__form__buttons
+      a(href="#").auth__form__button На главную
+      a(href="#").auth__form__button Войти
           
