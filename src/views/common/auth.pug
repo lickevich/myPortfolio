@@ -1,19 +1,21 @@
 
 .auth__container
   h2.subtitle.subtitle--auth Авторизуйтесь
-  form.auth__form
+  form.auth__form#auth-form
     .auth__form-container
       .auth__form__col
         .auth__form__row
           .auth__form__block__picture
             +icon('login', 'auth__form__block__icon')
           label.auth__form__block
-            input(type="text" placeholder="Логин" name="login").auth__form__block__input
+            input(type="text" placeholder="Логин" name="login" required).auth__form__block__input
+            .error#error-login Вы не ввели логин
         .auth__form__row
           .auth__form__block__picture
             +icon('password', 'auth__form__block__icon')
           label.auth__form__block
-            input(type="password" placeholder="Пароль" name="password").auth__form__block__input
+            input(type="password" placeholder="Пароль" name="password" required).auth__form__block__input
+            .error#error-pass Вы не ввели пароль
         .auth__form__row
           label.auth__form__checkbox
             input(type="checkbox" name="human" checked).auth__form__checkbox__input
@@ -32,5 +34,5 @@
             span.auth__form__radio__text Не уверен
     .auth__form__buttons
       a(href="#").auth__form__button На главную
-      a(href="#").auth__form__button Войти
+      a(href="#" id="enter").auth__form__button Войти
           
