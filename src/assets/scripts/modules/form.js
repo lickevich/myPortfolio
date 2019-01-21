@@ -36,17 +36,29 @@ function validateForm(form) {
 }
 
 function validateField(field) {
+    const fieldParent = field.parentNode;
+    const fieldParentPrev = fieldParent.previousElementSibling;
+    const fieldParentPrevChild = fieldParentPrev.firstChild;
 
     field.addEventListener('focus', function() {
         field.nextElementSibling.style.visibility = 'hidden';
+        field.style.border = '0';
+        field.style.borderRadius = 'initial';
+        fieldParentPrevChild.style.fill = '#e1e1d6';
     });
 
     if (!field.checkValidity()) {
         field.nextElementSibling.style.visibility = 'visible';
+        field.style.border = '1px solid #e44845';
+        field.style.borderRadius = '5px';
+        fieldParentPrevChild.style.fill = '#e44845';
 
         return false;
     } else {
         field.nextElementSibling.style.visibility = 'hidden';
+        field.style.border = '1px solid #16c2aa';
+        field.style.borderRadius = '5px';
+        fieldParentPrevChild.style.fill = '#16c2aa';
 
         return true;
     }

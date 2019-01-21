@@ -55,7 +55,8 @@
                 padding: 10px;
                 border: 0;
                 border-top-right-radius: 5px;
-                border-bottom-right-radius: 5px; 
+                border-bottom-right-radius: 5px;
+                outline: none; 
             }
         }
         &__checkbox {
@@ -195,5 +196,5 @@
     fill: #e44845;
 }
 .green-icon {
-    fill: #e44845;
+    fill: #e44845; 
 }

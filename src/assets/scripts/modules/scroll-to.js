@@ -1,9 +1,9 @@
-// function scrollDown() {
-//     const scrollDownBtn = document.querySelector('.arrow-down__button');
-
-//     scrollDownBtn.addEventListener('click', function() {
-//         let height = document.documentElement.clientHeight;
-//         window.scrollBy(0, height);
-
-//     });
-// }
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+ 
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+ });
