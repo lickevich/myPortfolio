@@ -13,7 +13,7 @@ enterButton.addEventListener('click', function(e) {
         };
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
-        xhr.open('POST', 'https://webdev-api.loftschool.com/');
+        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
         xhr.send(JSON.stringify(data));
         xhr.addEventListener('load', function() {
             if (xhr.response.status) {

@@ -95,6 +95,8 @@
     left: 0;
     bottom: 0;
     right: 0;
+    height: 100%;
+    width: 100%;
 }
 .slider__button__arrow {
     position: absolute;
@@ -173,4 +175,21 @@
     margin-left: 8px;
     color: white;
     font-weight: 500;
+}
+
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: 1s;
+}
+.slide-down-leave {
+  bottom: 0;
+}
+.slide-down-leave-to {
+  bottom: -100%;
+}
+.slide-down-enter {
+  bottom: 100%;
+}
+.slide-down-enter-to {
+  bottom: 0%;
 }
