@@ -35,11 +35,11 @@ script(type="text/x-template")#slider-btns
       .slider__button__arrow
         +icon('arrow_down', 'slider__button__arrow-icon slider__button__arrow-icon--prev')
       transition-group(name="slide-down" tag="div").slider__button-container
-        .slider__button-img-wrap
+        div(:key="prevButtonWorks[index].photo").slider__button-img-wrap
           img(:src="prevButtonWorks[index].photo", alt="").slider__button-pic
-    .slider__button.slider__button-next(@click="slide('next')")
+    .slider__button-next(@click="slide('next')")
       .slider__button__arrow
         +icon('arrow_down', 'slider__button__arrow-icon slider__button__arrow-icon--next')
       transition-group(name="slide-up" tag="div").slider__button-container
-        .slider__button-img-wrap
+        div(:key="nextButtonWorks[index].photo").slider__button-img-wrap
           img(:src="nextButtonWorks[index].photo", alt="").slider__button-pic
