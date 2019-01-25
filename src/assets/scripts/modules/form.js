@@ -1,25 +1,28 @@
+import axios from 'axios';
+
 const enterButton = document.querySelector('#enter');
 const authForm = document.querySelector('#auth-form');
 
-enterButton.addEventListener('click', function(e) {
+enterButton.addEventListener('click', function (e) {
     e.preventDefault();
 
     if (validateForm(authForm)) {
         const data = {
-            login: authForm.elements.login.value,
+            name: authForm.elements.login.value,
             password: authForm.elements.password.value,
-            human: authForm.elements.human.checked,
-            question: authForm.elements.question.value
         };
-        const xhr = new XMLHttpRequest();
-        xhr.responseType = 'json';
-        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-        xhr.send(JSON.stringify(data));
-        xhr.addEventListener('load', function() {
-            if (xhr.response.status) {
-                console.log('все ок');
+        console.log(authForm.elements.login.value);
+
+
+        axios.post('https://webdev-api.loftschool.com/login', data).then(response => {
+            console.log(response)
+            if (response.status == 200) {
+                localStorage.setItem('token', response.data.token);
             }
-        });
+        }, error => {
+            console.error(error);
+        })
+
     }
 });
 

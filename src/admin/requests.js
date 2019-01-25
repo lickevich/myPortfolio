@@ -1,5 +1,5 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://webdev-api.loftschool.com";
+axios.defaults.baseURL = "https://webdev-api.loftschool.com";
 
 export default axios;
