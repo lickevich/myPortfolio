@@ -1,4 +1,5 @@
 import axios from 'axios';
+import appRequests from '../../../admin/requests.js';
 
 const enterButton = document.querySelector('#enter');
 const authForm = document.querySelector('#auth-form');
@@ -17,7 +18,9 @@ enterButton.addEventListener('click', function (e) {
         axios.post('https://webdev-api.loftschool.com/login', data).then(response => {
             console.log(response)
             if (response.status == 200) {
-                localStorage.setItem('token', response.data.token);
+                const token = response.data.token;
+                localStorage.setItem('token', token);
+                appRequests.defaults.headers['Authorization'] = `Bearer ${token}`;
             }
         }, error => {
             console.error(error);
