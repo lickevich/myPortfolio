@@ -21,6 +21,10 @@
 
 .header__link {
     color: rgba(#fff, 0.8);
+
+    &:hover {
+        color: rgba(#fff, 1);
+    }
 }
 </style>
 

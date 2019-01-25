@@ -34,10 +34,15 @@ export default {
     border-right: 2px solid #fff;
     cursor: pointer;
     user-select: none;
+    transition: 0.3s;
 
     &:hover,
     &.is-active {
         background-color: #fff;
+        
+        .tab__title {
+            color: #16c2aa;
+        }
     }
 }
 

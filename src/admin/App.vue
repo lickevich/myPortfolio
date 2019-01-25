@@ -5,7 +5,7 @@
     .tabs
       tabs
     .content
-
+      skills
 </template>
 
 <script>
@@ -78,13 +78,12 @@ ul {
   flex-direction: column;
 }
 
-// .header {
-//   height: 80px;
-// }
-
-// .tabs {
-//   height: 60px;
-// }
+.content {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(#fff, 0.8);
+  padding: 0 30px;
+}
 
 
 </style>
