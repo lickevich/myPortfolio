@@ -2,7 +2,9 @@
     #tabs
       ul.tabs
         li.tab(v-for="tab in tabs")
-          .tab__title {{tab.title}}
+          router-link(
+              :to="tab.href"
+          ).tab__title {{tab.title}}
 </template>
 
 <script>
@@ -10,9 +12,9 @@ export default {
     data() {
         return {
             tabs: [
-                {title: "Обо мне"},
-                {title: "Блог"},
-                {title: "Мои работы"}
+                {title: "Обо мне", href: "/admin"},
+                {title: "Блог", href: "/admin/blog"},
+                {title: "Мои работы", href: "/admin/works"}
             ]
         };
     }
@@ -49,6 +51,8 @@ export default {
 .tab__title {
     color: rgba(#48676e, 0.8);
     font-weight: 500;
+    text-decoration: none;
+    display: block;
 }
 
 </style>

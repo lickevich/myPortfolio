@@ -16,11 +16,11 @@
 </template>
 
 <script>
-import skillsComp from "./skillsComp.vue";
+// import skillsComp from "./skillsComp.vue";
 
 export default {
     components: {
-        skillsComp
+        // skillsComp
     },
     props: {
         type: {

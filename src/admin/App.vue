@@ -5,19 +5,21 @@
     .tabs
       tabs
     .content
-      skills
+      router-view
 </template>
 
 <script>
 import header from './components/header.vue';
 import tabs from './components/tabs.vue';
 import skills from './components/skills.vue';
+import blog from './components/blog.vue';
 
 export default {
   components: {
     appHeader: header,
     tabs,
-    skills
+    skills,
+    blog
   }
 };
 </script>
