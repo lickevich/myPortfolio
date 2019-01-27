@@ -1,8 +1,20 @@
 <template lang="pug">
     #header
       h1.header__title Панель администрирования
-      a(href="#").header__link Вернуться на сайт
+      a(@click="logout").header__link Вернуться на сайт
 </template>
+
+<script>
+import { mapActions } from "vuex";
+
+export default {
+    methods: {
+        ...mapActions({
+            logout: 'user/logout'
+        })
+    }
+}
+</script>
 
 
 <style lang="scss" scoped>

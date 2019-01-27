@@ -7,7 +7,7 @@
         label.blog__row
           input(type="text" placeholder="Название").blog__input
         label.blog__row
-          input(type="date" placeholder="Дата").blog__input
+          input(type="text" placeholder="Дата").blog__input
         label.blog__row
           textarea(type="text" placeholder="Содержание").blog__textarea
         .blog__row
@@ -15,6 +15,10 @@
 </template>
 
 <style lang="scss" scoped>
+
+.blog__title {
+  padding: 30px 0;
+}
 
 .blog__head {
   margin: 0;
@@ -43,6 +47,7 @@
 }
 .blog__textarea {
   min-height: 170px;
+  width: 100%;
 }
 
 </style>

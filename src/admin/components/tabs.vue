@@ -52,7 +52,6 @@ export default {
     color: rgba(#48676e, 0.8);
     font-weight: 500;
     text-decoration: none;
-    display: block;
 }
 
 </style>
