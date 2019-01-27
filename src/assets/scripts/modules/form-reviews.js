@@ -19,7 +19,7 @@ clearButton.addEventListener('click', () => {
 sendButton.addEventListener('click', function(e) {
     e.preventDefault();
 
-    if (validateForm(reviewsForm) == true) {
+    if (validateForm(reviewsForm)) {
         popup.style.visibility = "visible";
         clear();
     }

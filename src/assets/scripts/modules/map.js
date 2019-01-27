@@ -205,10 +205,10 @@ function initMap() {
         position: google.maps.ControlPosition.LEFT_CENTER
       }
     });
-  
+    
     const image = {
       url: "./assets/images/svg-icon/map_marker.svg",
-      size: new google.maps.Size(60, 80)
+      size: new google.maps.Size(60, 80),
     };
   
     const marker = new google.maps.Marker({
