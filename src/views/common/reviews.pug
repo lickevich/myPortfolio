@@ -28,7 +28,7 @@ section.reviews
     .reviews__feedback
       .reviews__feedback__blur
       h2.subtitle.subtitle--form Связаться со мной
-      form.reviews__feedback__form
+      form.reviews__feedback__form#reviews-form
         .reviews__feedback__form-container
           .reviews__feedback__form__col
             label.reviews__feedback__form__block
@@ -38,8 +38,8 @@ section.reviews
             label.reviews__feedback__form__block
               textarea(type="text", placeholder="Ваше сообщение", name="comment", rows="6").reviews__feedback__form__textarea
         .reviews__feedback__buttons
-          a.reviews__feedback__button.reviews__feedback__button--send Отправить
-          a.reviews__feedback__button.reviews__feedback__button--clear Очистить
+          a.reviews__feedback__button.reviews__feedback__button--send#reviews-button-send Отправить
+          a.reviews__feedback__button.reviews__feedback__button--clear#reviews-button-clear Очистить
     .reviews__arrow-up
       include ./arrow-up.pug
 
