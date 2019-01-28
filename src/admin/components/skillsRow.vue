@@ -16,23 +16,22 @@
 </template>
 
 <script>
-// import skillsComp from "./skillsComp.vue";
+import skillsComp from "./skillsComp.vue";
 
 export default {
-    components: {
-        // skillsComp
+  components: {
+    skillsComp
+  },
+  props: {
+    type: {
+      type: Object,
+      default: () => {} // Значение по умолчанию, если ничего не передано, будет пустой объект.
     },
-    props: {
-        type: {
-            type: Object,
-            default: () => {} // Значение по умолчанию, если ничего не передано, будет пустой объект.
-        },
-        skills: {
-            type: Array,
-            default: () => []
-        }
+    skills: {
+      type: Array,
+      default: () => []
     }
-
-}
+  }
+};
 </script>
 

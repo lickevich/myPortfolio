@@ -15,44 +15,44 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 
 export default {
-    props: {
-        skill: {
-            type: Object,
-            default: () => {}
-        },
-        editmode: {
-            type: Boolean,
-            default: false
-        },
-        typeId: {
-            type: Number,
-            default: 0
-        }
+  props: {
+    skill: {
+      type: Object,
+      default: () => {}
     },
-    data() {
-        return {
-            newSkill: {
-                title: "",
-                percents: "",
-                category: this.typeId
-            }
-        }
+    editmode: {
+      type: Boolean,
+      default: false
     },
-    methods: {
-        ...mapActions({
-            addSkillAction: "skills/add",
-            removeSkill: "skills/remove"
-        }),
-        addNewSkill(newSkill) {
-            this.addSkillAction(newSkill).then(response => {
-                this.newSkill.title = ""
-                this.newSkill.percents = ""
-            })
-        }
+    typeId: {
+      type: Number,
+      default: 0
     }
-}
+  },
+  data() {
+    return {
+      newSkill: {
+        title: "",
+        percents: "",
+        category: this.typeId
+      }
+    };
+  },
+  methods: {
+    ...mapActions({
+      addSkillAction: "skills/add",
+      removeSkill: "skills/remove"
+    }),
+    addNewSkill(newSkill) {
+      this.addSkillAction(newSkill).then(response => {
+        this.newSkill.title = response.data.title;
+        this.newSkill.percents = response.data.percents;
+      });
+    }
+  }
+};
 </script>
 

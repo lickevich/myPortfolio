@@ -6,14 +6,20 @@
       tabs
     .content
       router-view
+    .enter__form
+      input(v-model="enter.name" label="Name")
+      input(type="password" v-model="enter.password" label="Password")
+      button(@click="handleEnter")  Войти
 </template>
 
 <script>
-import header from './components/header.vue';
-import tabs from './components/tabs.vue';
-import skills from './components/skills.vue';
-import blog from './components/blog.vue';
-import works from './components/works.vue';
+import axios from "axios";
+
+import header from "./components/header.vue";
+import tabs from "./components/tabs.vue";
+import skills from "./components/skills.vue";
+import blog from "./components/blog.vue";
+import works from "./components/works.vue";
 
 export default {
   components: {
@@ -22,6 +28,25 @@ export default {
     skills,
     blog,
     works
+  },
+  data: () => ({
+    enter: { name: "", password: "" }
+  }),
+  mounted() {},
+  methods: {
+    handleEnter() {
+      axios.post("https://webdev-api.loftschool.com/login", this.enter).then(
+        response => {
+          console.log(response);
+          if (response.status == 200) {
+            localStorage.setItem("token", response.data.token);
+          }
+        },
+        error => {
+          console.error(error);
+        }
+      );
+    }
   }
 };
 </script>
@@ -46,7 +71,7 @@ html {
 }
 
 body {
-  font-family: 'Roboto', Helvetica, sans-serif;
+  font-family: "Roboto", Helvetica, sans-serif;
   line-height: 1.42;
   color: $text-color;
   -webkit-font-smoothing: antialiased;
@@ -57,7 +82,12 @@ body {
   height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 0;
 }
@@ -76,7 +106,7 @@ ul {
 }
 
 #root {
-  background: url('./images/admin-bg.png') center center / cover no-repeat;
+  background: url("./images/admin-bg.png") center center / cover no-repeat;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -88,7 +118,5 @@ ul {
   background-color: rgba(#fff, 0.8);
   padding: 0 30px;
 }
-
-
 </style>
 

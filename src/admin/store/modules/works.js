@@ -22,6 +22,7 @@ const works = {
             });
 
             this.$axios.post("/works", formData).then(response => {
+
                 commit('addNewWork', response.data)
             });
         },
@@ -37,8 +38,8 @@ const works = {
                 commit('editWork', response.data.work)
             });
         },
-        fetch({commit}) {
-            this.$axios.get('/works/1').then(response => {
+        fetch({ commit }, id) {
+            this.$axios.get(`/works/${id}`).then(response => {
                 commit('fillUpWorks', response.data);
             })
         }

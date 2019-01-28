@@ -1,53 +1,36 @@
 <template lang="pug">
-  .blog
-    h2.blog__title Страница «Блог» 
-    .blog__content
-      h3.blog__head Добавить запись
-      form.blog__form
-        label.blog__row
-          input(type="text" placeholder="Название").blog__input
-        label.blog__row
-          input(type="text" placeholder="Дата").blog__input
-        label.blog__row
-          textarea(type="text" placeholder="Содержание").blog__textarea
-        .blog__row
-          button(type="submit").btn Добавить
+  .container.container_blog
+    h2.content__title Страница "Блог"
+    .content-wrap
+      add-article
+      last-articles
 </template>
 
-<style lang="scss" scoped>
+<script>
+import addArticle from "./blog/addArticle.vue";
+import lastArticles from "./blog/lastArticles.vue";
 
-.blog__title {
-  padding: 30px 0;
-}
+import { mapState } from "vuex";
+export default {
+  components: {
+    addArticle,
+    lastArticles
+  },
 
-.blog__head {
-  margin: 0;
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-weight: 500;
-}
-.blog__form {
-  display: flex;
-  flex-direction: column;
-}
-.blog__row {
-  max-width: 500px;
-  margin-bottom: 25px;
-}
-.blog__input,
-.blog__textarea {
-  padding: 15px 20px;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  font-family: "Roboto", Helvetica, sans-serif;
-}
-.blog__input {
-  width: 60%;
-}
-.blog__textarea {
-  min-height: 170px;
-  width: 100%;
-}
+  computed: {
+    ...mapState({
+      active: state => state.articles.active
+    })
+  },
+  created() {
+    let id = this.$store.state.user.id;
 
-</style>
+    this.$store.dispatch("articles/getArticlesData", id);
+
+    this.active.activeClass = true;
+  },
+  destroyed() {
+    this.active.activeClass = false;
+  }
+};
+</script>

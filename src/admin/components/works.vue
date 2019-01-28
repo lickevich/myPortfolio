@@ -38,86 +38,88 @@
 import { mapActions, mapState } from "vuex";
 
 export default {
-    data() {
-        return {
-            previewPic: "",
-            editmode: false,
-            work: {
-                id: 0,
-                title: "",
-                techs: "",
-                link: "",
-                photo: ""
-            }
-        }
-    },
-    computed: {
-        ...mapState('works', {
-            works: state => state.works
-        })
-    },
-    created() {
-        this.fetchWorks();
-    },
-    methods: {
-        ...mapActions({
-            addNewWork: "/works/add",
-            fetchWorks: "/works/fetch",
-            editWorks: "/works/edit"
-        }),
-        editExistedWork(existedWork) {
-            this.editmode = true;
-            this.work.id = existedWork.id;
-            this.work.title = existedWork.title;
-            this.work.link = existedWork.link;
-            this.work.techs = existedWork.techs;
-            this.previewPic = `url(https://webdev-api.loftschool.com/${existedWork.photo})`;
-        },
-        renederPicAndAddToData(e) {
-            const file = e.target.files[0];
-            const renderer = new FileReader();
+  data() {
+    return {
+      previewPic: "",
+      editmode: false,
+      work: {
+        id: 0,
+        title: "",
+        techs: "",
+        link: "",
+        photo: ""
+      }
+    };
+  },
+  computed: {
+    ...mapState("works", {
+      works: state => state.works
+    })
+  },
+  created() {
+    let id = this.$store.state.user.id;
 
-            renderer.readAsDataURL(file);
+    this.fetchWorks(id);
+  },
+  methods: {
+    ...mapActions({
+      addNewWork: "works/add",
+      fetchWorks: "works/fetch",
+      editWorks: "works/edit"
+    }),
+    editExistedWork(existedWork) {
+      this.editmode = true;
+      this.work.id = existedWork.id;
+      this.work.title = existedWork.title;
+      this.work.link = existedWork.link;
+      this.work.techs = existedWork.techs;
+      this.previewPic = `url(https://webdev-api.loftschool.com/${
+        existedWork.photo
+      })`;
+    },
+    renederPicAndAddToData(e) {
+      const file = e.target.files[0];
+      const renderer = new FileReader();
 
-            renderer.onloadend = () => {
-                this.previewPic = `url(${renderer.result})`;
-            };
+      renderer.readAsDataURL(file);
 
-            this.work.photo = file
-        }
+      renderer.onloadend = () => {
+        this.previewPic = `url(${renderer.result})`;
+      };
+
+      this.work.photo = file;
     }
-}
+  }
+};
 </script>
 
 
 <style lang="scss" scoped>
-
 .works__title {
   padding: 30px 0;
 }
 
 .preview {
-    width: 200px;
-    height: 200px;
-    background: center center / contain no-repeat;
+  width: 200px;
+  height: 200px;
+  background: center center / contain no-repeat;
 }
 
 .works {
-    display: flex;
+  display: flex;
 }
 
 .works__table {
-    width: 100%;
+  width: 100%;
 }
 
 .table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
 
-    td {
-        border: 1px solid black;
-    }
+  td {
+    border: 1px solid black;
+  }
 }
-
 </style>

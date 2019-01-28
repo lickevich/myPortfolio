@@ -1,14 +1,17 @@
 const user = {
-    namespaced: true,
     state: {
-        isAuth: false
+        isAuth: false,
+        id: 0
     },
     mutations: {
-        authorize: state => state.isAuth = true,
-        unAuthorize: state => state.isAuth = false
+        addUserId(state, id) {
+            state.id = id
+        },
+        authorize(state, bool) { state.isAuth = bool },
+
     },
     actions: {
-        logout({commit}) {
+        logout({ commit }) {
             commit('unAuthorize');
             localStorage.removeItem('token');
             window.location.reload();
