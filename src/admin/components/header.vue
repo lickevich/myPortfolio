@@ -33,6 +33,7 @@ export default {
 
 .header__link {
     color: rgba(#fff, 0.8);
+    cursor: pointer;
 
     &:hover {
         color: rgba(#fff, 1);

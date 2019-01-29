@@ -1,6 +1,6 @@
 <template lang="pug">
     #tabs
-      ul.tabs
+      ul.tabs__list
         li.tab(v-for="tab in tabs")
           router-link(
               :to="tab.href"
@@ -22,12 +22,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#tabs {
-  background-color: #efeee9;
-}
 
-.tabs {
+.tabs__list {
   display: flex;
+  background-color: #efeee9;
 }
 
 .tab {
@@ -51,6 +49,8 @@ export default {
   color: rgba(#48676e, 0.8);
   font-weight: 500;
   text-decoration: none;
+  display: block;
+  
 }
 </style>
 
