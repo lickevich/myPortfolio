@@ -47,6 +47,10 @@
         }
         &__text {
             padding-bottom: 60px;
+
+            @include phones {
+                padding-bottom: 120px;
+            }
         }
     }
 }

@@ -15,10 +15,12 @@
         &:last-child {
             border-bottom: none;
         }
-
         @include tablets {
             flex-direction: column;
         }
+    }
+    &__menu {
+        margin: 0 10px;
     }
     &__col {
         &--margin-right {
