@@ -21,7 +21,6 @@ enterButton.addEventListener('click', function (e) {
                 const token = response.data.token;
                 localStorage.setItem('token', token);
                 appRequests.defaults.headers['Authorization'] = `Bearer ${token}`;
-                // this.authorize();
             }
         }, error => {
             console.error(error);
@@ -70,12 +69,3 @@ function validateField(field) {
         return true;
     }
 }
-
-
-// import { mapMutations } from "vuex";
-
-// methods: {
-//     ...mapMutations({
-//         authorize: "user/authorize"
-//     })
-// }

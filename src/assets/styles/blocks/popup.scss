@@ -6,8 +6,13 @@
     bottom: 0;
     background-color: rgba($green, 0.8);
     z-index: 99;
-    visibility: hidden;
+    // visibility: hidden;
     transition: 1s;
+    display: none;
+    
+    &.is-active {
+        display: block;
+    }
 }
 
 .popup {

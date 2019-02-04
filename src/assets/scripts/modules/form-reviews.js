@@ -1,3 +1,6 @@
+import axios from 'axios';
+import appRequests from '../../../admin/requests.js';
+
 
 const sendButton = document.querySelector('#reviews-button-send');
 const clearButton = document.querySelector('#reviews-button-clear');
@@ -20,8 +23,25 @@ sendButton.addEventListener('click', function(e) {
     e.preventDefault();
 
     if (validateForm(reviewsForm)) {
-        popup.style.visibility = "visible";
-        clear();
+        // popupAdd();
+        // clear();
+        const data = {
+            name: reviewsForm.elements.name.value,
+            email: reviewsForm.elements.email.value,
+            comment: reviewsForm.elements.comment.value
+        };
+        console.log(reviewsForm.elements.name.value);
+
+
+        axios.post('https://webdev-api.loftschool.com/login', data).then(response => {
+            console.log(response)
+            if (response.status <= 400) {
+                popupAdd();
+                clear();
+            }
+        }, error => {
+            console.error(error);
+        })
     }
 });
 
@@ -43,25 +63,36 @@ function validateForm(form) {
 function validateField(field) {
 
     if (!field.checkValidity()) {
-        field.style.border = '1px solid #e44845';
+        field.style.border = '1px solid #16c2aa';
 
         return false;
     } else {
-        field.style.border = '1px solid #16c2aa';
+        field.style.border = '1px solid #e44845';
 
         return true;
     }
 }
 
+
 popup.addEventListener('click', (e) => {
     e.preventDefault();
 
-    popup.style.visibility = "hidden";
+    popupRemove();
 })
+
 
 popupButton.addEventListener('click', (e) => {
     e.preventDefault();
 
-    popup.style.visibility = "hidden";
+    popupRemove();
 })
 
+function popupAdd() {
+
+    popup.classList.add('is-active');
+}
+
+function popupRemove() {
+
+    popup.classList.remove('is-active');
+}
