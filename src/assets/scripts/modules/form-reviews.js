@@ -8,10 +8,34 @@ const reviewsForm = document.querySelector('#reviews-form');
 const popup = document.querySelector('.popup-wrapper');
 const popupButton = document.querySelector('.popup__button');
 
+popup.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    popupRemove();
+})
+
+
+popupButton.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    popupRemove();
+    clear();
+})
+
+function popupAdd() {
+
+    popup.classList.add('is-active');
+}
+
+function popupRemove() {
+
+    popup.classList.remove('is-active');
+}
+
 function clear() {
-    reviewsForm.elements.name.style.border = "0";
-    reviewsForm.elements.email.style.border = "0";     
-    reviewsForm.elements.comment.style.border = "0";
+    reviewsForm.elements.name.style.border = "none";
+    reviewsForm.elements.email.style.border = "none";      
+    reviewsForm.elements.comment.style.border = "none";
     reviewsForm.reset();
 }
 
@@ -23,31 +47,13 @@ sendButton.addEventListener('click', function(e) {
     e.preventDefault();
 
     if (validateForm(reviewsForm)) {
-        // popupAdd();
-        // clear();
-        const data = {
-            name: reviewsForm.elements.name.value,
-            email: reviewsForm.elements.email.value,
-            comment: reviewsForm.elements.comment.value
-        };
-        console.log(reviewsForm.elements.name.value);
-
-
-        axios.post('https://webdev-api.loftschool.com/login', data).then(response => {
-            console.log(response)
-            if (response.status <= 400) {
-                popupAdd();
-                clear();
-            }
-        }, error => {
-            console.error(error);
-        })
+        popupAdd();
     }
 });
 
 function validateForm(form) {
     let valid = true;
-
+    
     if (!validateField(form.elements.name)) {
         valid = false;
     }
@@ -63,36 +69,15 @@ function validateForm(form) {
 function validateField(field) {
 
     if (!field.checkValidity()) {
-        field.style.border = '1px solid #16c2aa';
+        field.style.border = '1px solid #e44845';
 
         return false;
     } else {
-        field.style.border = '1px solid #e44845';
+        field.style.border = '1px solid #16c2aa';
 
         return true;
     }
 }
 
 
-popup.addEventListener('click', (e) => {
-    e.preventDefault();
 
-    popupRemove();
-})
-
-
-popupButton.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    popupRemove();
-})
-
-function popupAdd() {
-
-    popup.classList.add('is-active');
-}
-
-function popupRemove() {
-
-    popup.classList.remove('is-active');
-}

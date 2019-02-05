@@ -32,11 +32,11 @@ section.reviews
         .reviews__feedback__form-container
           .reviews__feedback__form__col
             label.reviews__feedback__form__block
-              input(type="text", placeholder="Имя", name="name").reviews__feedback__form__input
+              input(type="text", placeholder="Имя", name="name" required).reviews__feedback__form__input
             label.reviews__feedback__form__block
-              input(type="email", placeholder="Email", name="email").reviews__feedback__form__input
+              input(type="email", placeholder="Email", name="email" required).reviews__feedback__form__input
             label.reviews__feedback__form__block
-              textarea(type="text", placeholder="Ваше сообщение", name="comment", rows="6").reviews__feedback__form__textarea
+              textarea(type="text", placeholder="Ваше сообщение", name="comment", rows="6" required).reviews__feedback__form__textarea
         .reviews__feedback__buttons
           a.reviews__feedback__button.reviews__feedback__button--send#reviews-button-send Отправить
           a.reviews__feedback__button.reviews__feedback__button--clear#reviews-button-clear Очистить
